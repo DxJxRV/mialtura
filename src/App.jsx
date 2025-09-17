@@ -4,6 +4,7 @@ import ResultModal from "./ResultModal" // Importar el modal separado
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import PrivacyPolicy from "./PrivacyPolicy"
 import Terms from "./Terms"
+import AvisoLegal from "./AvisoLegal"
 
 // Datos mock solo para Chiapas
 const mockPercentileData = {
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/privacidad" element={<PrivacyPolicy />} />
         <Route path="/terminos" element={<Terms />} />
+        <Route path="/aviso" element={<AvisoLegal />} />
       </Routes>
     </Router>
   )
@@ -100,7 +102,7 @@ function Home() {
           className="text-center mb-8"
         >
           <h1 className="text-3xl font-bold text-white mb-3">
-            ¿Eres más alto que un chiapaneco? 📏
+            ¿Qué tan alto eres en México? 📏
           </h1>
           <p className="text-lg text-white/90">
             Compara tu altura con el promedio en Chiapas
@@ -194,6 +196,12 @@ function Home() {
         className="text-white/80 hover:underline text-sm"
       >
         Términos
+      </a>
+      <a
+        href="/aviso"
+        className="text-white/80 hover:underline text-sm"
+      >
+        Aviso legal y contacto
       </a>
     </div>
     </div>
