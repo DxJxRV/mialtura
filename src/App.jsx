@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import ResultModal from "./ResultModal" // Importar el modal separado
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import PrivacyPolicy from "./PrivacyPolicy"
+import Terms from "./Terms"
 
 // Datos mock solo para Chiapas
 const mockPercentileData = {
@@ -37,6 +40,18 @@ const themes = [
 ]
 
 export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacidad" element={<PrivacyPolicy />} />
+        <Route path="/terminos" element={<Terms />} />
+      </Routes>
+    </Router>
+  )
+}
+
+function Home() {
   const [formData, setFormData] = useState({ height: "", weight: "", gender: "" })
   const [result, setResult] = useState(null)
   const [isCalculating, setIsCalculating] = useState(false)
@@ -166,6 +181,21 @@ export default function App() {
           )}
         </AnimatePresence>
       </div>
+
+      <div className="fixed bottom-0 w-full flex justify-center gap-6 pb-4 z-50">
+      <a
+        href="/privacidad"
+        className="text-white/80 hover:underline text-sm"
+      >
+        Privacidad
+      </a>
+      <a
+        href="/terminos"
+        className="text-white/80 hover:underline text-sm"
+      >
+        Términos
+      </a>
+    </div>
     </div>
   )
 }
