@@ -161,7 +161,7 @@ export default function App() {
               ref={resultRef}
               result={result}
               selectedTheme={selectedTheme}
-              onClose={() => setResult(null)}
+              onClose={() => window.location.reload()}
             />
           )}
         </AnimatePresence>
