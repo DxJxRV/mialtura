@@ -30,12 +30,10 @@ function getBMICategory(bmi) {
 }
 
 const themes = [
-  "theme-sunset",
   "theme-ocean",
   "theme-forest",
   "theme-fire",
   "theme-purple",
-  "theme-pink",
 ]
 
 export default function App() {
@@ -48,12 +46,12 @@ export default function App() {
   const resultRef = useRef(null)
 
   const handleCalculate = async () => {
-    if (!formData.height || !formData.weight || !formData.gender) return
+    if (!formData.height || !formData.gender) return
     setIsCalculating(true)
     await new Promise((res) => setTimeout(res, 1000))
 
     const h = parseFloat(formData.height)
-    const w = parseFloat(formData.weight)
+    const w = parseFloat(70)
     const g = formData.gender === "male" ? "male" : "female"
 
     const heightStats = mockPercentileData.height[g]
@@ -66,6 +64,8 @@ export default function App() {
     const bmiCategory = getBMICategory(bmi)
 
     setResult({
+      height: h,
+      weight: w,
       heightPercentile,
       weightPercentile,
       bmi: bmi.toFixed(1),
@@ -95,7 +95,7 @@ export default function App() {
         {/* formulario */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <div className="form-card p-6 rounded-xl">
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid gap-4 mb-4">
               <div>
                 <label className="text-sm font-medium">Altura (cm)</label>
                 <input
@@ -106,7 +106,7 @@ export default function App() {
                   className="w-full enhanced-input rounded-lg"
                 />
               </div>
-              <div>
+              {/* <div>
                 <label className="text-sm font-medium">Peso (kg)</label>
                 <input
                   type="number"
@@ -115,7 +115,7 @@ export default function App() {
                   onChange={(e) => setFormData({ ...formData, weight: e.target.value })}
                   className="w-full enhanced-input rounded-lg"
                 />
-              </div>
+              </div> */}
             </div>
 
             <div className="mb-4">

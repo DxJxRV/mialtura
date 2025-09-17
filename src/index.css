@@ -134,7 +134,7 @@ body {
   box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3);
 }
 .percentage-highlight {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   background: linear-gradient(45deg, #fff, rgba(255,255,255,0.8));
   -webkit-background-clip: text;
