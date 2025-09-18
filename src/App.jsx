@@ -93,8 +93,8 @@ function Home() {
   }
 
   return (
-    <div className="min-h-screen vibrant-bg flex items-center justify-center">
-      <div className="container mx-auto px-4 py-6 max-w-md">
+    <div className="min-h-screen vibrant-bg flex items-center justify-center flex-col">
+      <div className="container mx-auto px-4 py-6 max-w-md h-[100vh] flex flex-col justify-center">
         {/* encabezado */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -184,26 +184,100 @@ function Home() {
         </AnimatePresence>
       </div>
 
+      <div className="mx-auto max-w-3xl px-6 py-12 text-white space-y-10">
+        <h2 className="text-3xl font-extrabold text-center mb-6">📊 Datos curiosos sobre la altura en México</h2>
+
+        {/* Promedios */}
+        <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-3">📏 Altura promedio</h3>
+          <p className="leading-relaxed">
+            En México, los <span className="font-semibold">hombres miden en promedio 1.70m</span> y las{" "}
+            <span className="font-semibold">mujeres 1.58m</span>. Aunque pueda parecer “normal”,
+            esto coloca a México en la parte media-baja de los rankings mundiales de estatura.
+          </p>
+        </div>
+
+        {/* Diferencias regionales */}
+        <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-3">🌎 Diferencias regionales</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              En el <span className="font-semibold">norte</span> (Chihuahua, Sonora, Durango), la gente tiende a ser{" "}
+              <span className="text-green-300 font-semibold">más alta</span>.
+            </li>
+            <li>
+              En el <span className="font-semibold">sureste</span> (Chiapas, Oaxaca, Yucatán),
+              los promedios son <span className="text-red-300 font-semibold">más bajos</span>.
+            </li>
+            <li>
+              En zonas urbanas, la nutrición y el acceso a servicios mejoran la estatura frente a áreas rurales.
+            </li>
+          </ul>
+        </div>
+
+        {/* Genética y mestizaje */}
+        <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-3">🧬 Genética y mestizaje</h3>
+          <p className="leading-relaxed">
+            México es un país de enorme diversidad genética. La mezcla de raíces{" "}
+            <span className="font-semibold">indígenas, europeas y africanas</span>
+            ha dado lugar a una gran variedad de complexiones y estaturas.
+            ¡Cada región tiene su propio “sello” genético!
+          </p>
+        </div>
+
+        {/* Factores ambientales */}
+        <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-3">🥗 Factores ambientales</h3>
+          <p className="leading-relaxed">
+            La altura no depende solo de la genética.
+            Factores como la <span className="font-semibold">nutrición en la infancia</span>,
+            la salud prenatal, el acceso a servicios médicos y la calidad de vida
+            son determinantes en cuánto puede crecer una persona.
+          </p>
+        </div>
+
+        {/* Dato histórico */}
+        <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold mb-3">📜 Un vistazo al pasado</h3>
+          <p className="leading-relaxed">
+            Investigaciones muestran que los mexicanos de hace 200 años eran{" "}
+            <span className="font-semibold">8 a 10 cm más bajos</span> en promedio que los actuales.
+            Esto refleja cómo la nutrición y los cambios sociales influyen en nuestra evolución.
+          </p>
+        </div>
+
+        {/* Cierre */}
+        <div className="text-center pt-4">
+          <h3 className="text-2xl font-bold">💡 En conclusión:</h3>
+          <p className="mt-2 leading-relaxed">
+            Tu altura es el resultado de una mezcla única de <span className="font-semibold">genes, cultura y estilo de vida</span>.
+            En México, cada centímetro cuenta una historia diferente. 🇲🇽
+          </p>
+        </div>
+      </div>
+
+
       <div className="fixed bottom-0 w-full flex justify-center gap-6 pb-4 z-50">
-      <a
-        href="/privacidad"
-        className="text-white/80 hover:underline text-sm"
-      >
-        Privacidad
-      </a>
-      <a
-        href="/terminos"
-        className="text-white/80 hover:underline text-sm"
-      >
-        Términos
-      </a>
-      <a
-        href="/aviso"
-        className="text-white/80 hover:underline text-sm"
-      >
-        Aviso legal y contacto
-      </a>
-    </div>
+        <a
+          href="/privacidad"
+          className="text-white/80 hover:underline text-sm"
+        >
+          Privacidad
+        </a>
+        <a
+          href="/terminos"
+          className="text-white/80 hover:underline text-sm"
+        >
+          Términos
+        </a>
+        <a
+          href="/aviso"
+          className="text-white/80 hover:underline text-sm"
+        >
+          Aviso legal y contacto
+        </a>
+      </div>
     </div>
   )
 }
